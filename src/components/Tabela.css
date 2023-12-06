@@ -1,0 +1,27 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.btn_add_samochody {
+    font-size: 1.5rem;
+    width: 4rem;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+
+.btn_add_samochody:hover {
+    background-color: black;
+    color: white;
+}
+
+.icons {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
