@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/' Component={Logowanie} />
         <Route path='/tabela' Component={Tabela} />
-        <Route path='/tabela/add' Component={AddTabela} />
+        <Route path='/tabela/add/:id' Component={AddTabela} />
       </Routes>
     </div>
   );

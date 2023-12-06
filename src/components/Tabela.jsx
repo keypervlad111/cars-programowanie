@@ -31,7 +31,7 @@ function Tabela() {
                             <td>{car.marka}</td>
                             <td>{car.model}</td>
                             <td>{car.rocznik}</td>
-                            <td><BsFillFileExcelFill onClick={() => (navigate(/add/$`{ car.id }`))} className="icons" /></td>
+                            <td><BsFillFileExcelFill onClick={() => (navigate("/tabela/add/"+ car.id))} className="icons" /></td>
                             <td><BsPencilSquare className="icons" /></td>
                         </tr>
                     ))}
