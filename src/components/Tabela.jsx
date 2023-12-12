@@ -1,15 +1,9 @@
-import { useState } from "react";
+
 import { BsFillFileExcelFill, BsPencilSquare } from "react-icons/bs";
 import "./Tabela.css"
 import { useNavigate } from "react-router-dom";
-import AddTabela from "./AddTabela";
 
-function Tabela() {
-    const [arr, setArr] = useState([
-        { id: 1, marka: "Audi", model: "A6", rocznik: 2000 },
-        { id: 2, marka: "Seat", model: "Ibiza", rocznik: 2010 },
-        { id: 3, marka: "BMW", model: "e46", rocznik: 2000 }
-    ])
+function Tabela({ arr, deleteCar }) {
     const navigate = useNavigate();
     return (
         <div>
@@ -21,7 +15,7 @@ function Tabela() {
                         <th>Marka</th>
                         <th>Model</th>
                         <th>Rocznik</th>
-                        <th colspan="2"><button onClick={() => (navigate("/tabela/add"))} className="btn_add_samochody">&#43;</button></th>
+                        <th colSpan="2"><button onClick={() => (navigate("/tabela/add/dodaj"))} className="btn_add_samochody">&#43;</button></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,8 +25,8 @@ function Tabela() {
                             <td>{car.marka}</td>
                             <td>{car.model}</td>
                             <td>{car.rocznik}</td>
-                            <td><BsFillFileExcelFill onClick={() => (navigate("/tabela/add/"+ car.id))} className="icons" /></td>
-                            <td><BsPencilSquare className="icons" /></td>
+                            <td><BsFillFileExcelFill onClick={() => deleteCar(car.id)} className="icons" /></td>
+                            <td><BsPencilSquare onClick={() => (navigate("/tabela/add/"+ car.id))} className="icons" /></td>
                         </tr>
                     ))}
                 </tbody>
